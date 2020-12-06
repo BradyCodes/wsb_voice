@@ -101,6 +101,3 @@ for i in range(rep_ans):
     for j in range(len(spam_ans)):
         pyautogui.write(spam_ans[j],interval=0.2)
         pyautogui.press("enter")
-
-
-print(time.localtime())

@@ -93,7 +93,7 @@ askRecieve(questions[2], "rep_ans")
 
 # Switch to Whatsapp
 
-wb.open("https://wa.me/91{}".format(num_ans))
+wb.open("https://wa.me/1{}".format(num_ans))
 time.sleep(10)                            # --> waiting for loading
 pyautogui.press("enter")                  # --> to allow
 time.sleep(10)

@@ -6,23 +6,23 @@ import speech_recognition as sr
 import os
 
 os.system('clear')
+engine = pyttsx3.init()
+r = sr.Recognizer()
 
 def speak(x):
-    engine = pyttsx3.init()
     engine.say(x)
     # engine.save_to_file(filename="hello.txt", text="who are you")
     engine.runAndWait()
 def rec():
-    r = sr.Recognizer()
     with sr.Microphone() as source:
         sr.Recognizer().adjust_for_ambient_noise(source, duration=0.5)
         while(True):
             audio = r.listen(source)
-            x = r.recognize_google(audio, language="en-IN", show_all=False)
+            x = r.recognize_google(audio, language="en-US", show_all=False)
             print("Did you say: {}".format(x))
             speak("Did you say: {}".format(x))
             audio_1 = r.listen(source)
-            y= r.recognize_google(audio_1,language="en-IN",show_all=False)
+            y= r.recognize_google(audio_1,language="en-US",show_all=False)
             print(y)
             if y == "yes" or y == "Yes" or y == "yah" or y =="yo" or y=="yeah":          # yah,yo --> yes
                 break
@@ -101,3 +101,6 @@ for i in range(rep_ans):
     for j in range(len(spam_ans)):
         pyautogui.write(spam_ans[j],interval=0.2)
         pyautogui.press("enter")
+
+
+print(time.localtime())

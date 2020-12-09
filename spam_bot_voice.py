@@ -21,7 +21,7 @@ def rec():
             x = r.recognize_google(audio, language="en-US", show_all=False)
             print("Did you say: {}".format(x))
             speak("Did you say: {}".format(x))
-            audio_1 = r.listen(source)
+                audio_1 = r.listen(source)
             y= r.recognize_google(audio_1,language="en-US",show_all=False)
             print(y)
             if y == "yes" or y == "Yes" or y == "yah" or y =="yo" or y=="yeah":          # yah,yo --> yes
@@ -59,7 +59,8 @@ def askRecieve(q, type):
         num_ans = int(num_ans.replace(" ",""))
         num_ans = int(num_ans.replace("-",""))
     elif type == "rep_ans":
-        rep_ans = int(rec())
+        rep_ans = str(rec().replace(" ", ""))                  #    "202" = 202
+        rep_ans = int(rep_ans)
 
 # welcome speech
 
